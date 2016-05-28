@@ -1,0 +1,13 @@
+<h1>Edit Boyz</h1>
+<form method="POST" action="/students/<% @student.id %>" >
+  <input type="hidden" name="_method" value="PUT" />
+	<label for="name"> Name: </label>
+	<input type="text" name="student[name]" value="<%= @student.name %>" />
+	<label for="age"> Age: </label>
+	<input type="number" name="student[age]" value="<%= @student.age %>" />
+	<label for="born"> Date(mm/dd/yyyy): </label>
+	<input type="text" name="student[born]" value="<%= @student.born.strftime("%m/%d/%Y") if @student.born %>" />
+	<label for="bio"> Bio: </label>
+	<textarea name="student[bio]" />
+	<input type="submit" value="Save student" />
+</form>

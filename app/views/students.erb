@@ -1,0 +1,11 @@
+<h1>DaBoyz</h1>
+<a href="/students/new"> Create a new boy(student)</a>
+<%if @students.any? %>
+  <ul>
+    <% for @student in @students %>
+      <li><a href="/students/<%=@student.id%>"><%= @student.name%></a></li>
+    <% end %>
+  </ul>
+<%else%>
+  <p>No boyz have been created yet! Go make some cool students lol!</p>
+<% end %>
